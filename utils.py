@@ -4,7 +4,7 @@ import codecs
 
 def convert_str_to_vec(input_str):
     output_vec = []
-    hira_lists = [\
+    kana_lists = [\
             [u"ア", u"イ", u"ウ", u"エ", u"オ"],\
             [u"ァ", u"ィ", u"ゥ", u"ェ", u"ォ"],\
             [u"カ", u"キ", u"ク", u"ケ", u"コ"],\
@@ -36,9 +36,9 @@ def convert_str_to_vec(input_str):
             consonant_vec[10] = 1
             vowel_vec[2] = 1
         else:
-            for i, hira_list in enumerate(hira_lists):
-                if char in hira_list:
-                    index = hira_list.index(char)
+            for i, kana_list in enumerate(kana_lists):
+                if char in kana_list:
+                    index = kana_list.index(char)
                     consonant_vec[i] = 1
                     vowel_vec[index] = 1
                     break
